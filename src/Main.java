@@ -38,24 +38,23 @@ public class Main {
         System.out.println();
 
         for (int i = number.length - 1; i >= 0; i--) {
-            if (i == status.length - 1) {
-                System.out.println(status[i]);
-                break;
-            }
-            System.out.print(number[i] + ", ");
+
+            System.out.print(number[i] + (i != 0 ? ", " : ""));
         }
         System.out.println();
 
         for (int e = number1.length - 1; e >= 0; e--) {
 
-            System.out.print(number1[e] + ", ");
+            System.out.print(number1[e] + (e != 0 ? ", " : ""));
         }
+
         System.out.println();
 
         for (int x = status.length - 1; x >= 0; x--) {
 
-            System.out.print(status[x] + ", ");
+            System.out.print(status[x] + (x != 0 ? ", " : ""));
         }
+
         System.out.println();
 
 
@@ -64,9 +63,7 @@ public class Main {
                 number[i] += 1;
             }
         }
-        for (int i = 0; i < number.length; i++) {
-            System.out.println(Arrays.toString(number));
-        }
-    }
+        System.out.println(Arrays.toString(number));
 
+    }
 }
