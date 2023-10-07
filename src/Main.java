@@ -65,5 +65,45 @@ public class Main {
         }
         System.out.println(Arrays.toString(number));
 
+        task1();
     }
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+    public static void task1() {
+
+        int[] arr = generateRandomArray();
+        double amount = 0;
+        for (int i1 : arr) {
+            amount += i1;
+        }
+        System.out.println("Сумма трат за месяц составила " + amount + " рублей");
+
+        System.out.println("Средняя сумма трат за месяц составила " + amount / (float) arr.length + " рублей");
+
+        int min = arr[0];
+        int max = arr[0];
+
+        for (int calculation : arr) {
+            if (calculation < min) {
+                min = calculation;
+            } else if (calculation > max) {
+                max = calculation;
+            }
+        }
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей. " +
+                "Максимальная сумма трат за день составила " + max + " рублей");
+
+
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
+    }
+
 }
